@@ -22,7 +22,8 @@ app.post("/encurtar", (req, res) => {
   const codigo = gerarCodigo();
   links[codigo] = url;
 
-  const linkCurto = `http://localhost:3000/${codigo}`;
+  const baseURL = process.env.BASE_URL || "http://localhost:3000";
+const linkCurto = `${baseURL}/${codigo}`;
 
   res.json({ linkCurto });
 });
