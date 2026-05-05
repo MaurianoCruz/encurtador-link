@@ -35,6 +35,12 @@ button {
   padding: 10px;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+button:hover {
+  background: #16a34a;
 }
 
 #resultado {
@@ -46,4 +52,12 @@ button {
   padding: 10px;
   margin-top: 10px;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-card a {
+  color: #38bdf8;
+  text-decoration: none;
 }

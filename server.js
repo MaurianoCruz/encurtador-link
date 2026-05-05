@@ -21,7 +21,11 @@ app.post("/encurtar", (req, res) => {
   }
 
   const codigo = gerarCodigo();
-  links[codigo] = url;
+
+  links[codigo] = {
+    url,
+    clicks: 0
+  };
 
   const baseURL = process.env.BASE_URL || "http://localhost:3000";
   const linkCurto = `${baseURL}/${codigo}`;
@@ -33,10 +37,21 @@ app.get("/:codigo", (req, res) => {
   const { codigo } = req.params;
 
   if (links[codigo]) {
-    return res.redirect(links[codigo]);
+    links[codigo].clicks++;
+    return res.redirect(links[codigo].url);
   }
 
   res.status(404).send("Link não encontrado");
+});
+
+app.get("/stats/:codigo", (req, res) => {
+  const { codigo } = req.params;
+
+  if (links[codigo]) {
+    return res.json(links[codigo]);
+  }
+
+  res.status(404).json({ erro: "Link não encontrado" });
 });
 
 const PORT = process.env.PORT || 3000;

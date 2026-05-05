@@ -35,6 +35,17 @@ function mostrarLink(link) {
   div.innerHTML = `
     <div class="link-card">
       <a href="${link}" target="_blank">${link}</a>
+      <button onclick="copiar('${link}')">Copiar</button>
     </div>
   `;
+}
+
+function copiar(link) {
+  navigator.clipboard.writeText(link)
+    .then(() => {
+      alert("Link copiado!");
+    })
+    .catch(() => {
+      alert("Erro ao copiar");
+    });
 }
