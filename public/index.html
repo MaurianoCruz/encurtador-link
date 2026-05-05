@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Encurtador Pro</title>
+
+  <!-- ✅ CSS vai AQUI -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-  <h1>🔗 Encurtador de Links</h1>
-  <p class="sub">Transforme links longos em links curtos</p>
+  <!-- ✅ TODO O CONTEÚDO VISUAL VAI AQUI -->
+  <div class="container">
+    <h1>🔗 Encurtador de Links</h1>
+    <p class="sub">Transforme links longos em links curtos</p>
 
-  <div class="box">
-    <input type="text" id="urlInput" placeholder="Cole seu link aqui...">
-    <button id="btn">Encurtar</button>
+    <div class="box">
+      <input type="text" id="urlInput" placeholder="Cole seu link aqui...">
+      <button id="btn">Encurtar</button>
+    </div>
+
+    <!-- 👉 AQUI aparece o resultado -->
+    <div id="resultado"></div>
+
+    <!-- 👉 AQUI você adiciona o link do dashboard -->
+    <br>
+    <a href="dashboard.html">📊 Ver Dashboard</a>
   </div>
 
-  <div id="resultado"></div>
-</div>
+  <!-- ✅ JAVASCRIPT SEMPRE NO FINAL -->
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
 </body>
 </html>
