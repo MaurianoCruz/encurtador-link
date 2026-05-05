@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
@@ -23,7 +24,7 @@ app.post("/encurtar", (req, res) => {
   links[codigo] = url;
 
   const baseURL = process.env.BASE_URL || "http://localhost:3000";
-const linkCurto = `${baseURL}/${codigo}`;
+  const linkCurto = `${baseURL}/${codigo}`;
 
   res.json({ linkCurto });
 });
