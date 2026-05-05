@@ -1,11 +1,12 @@
 async function carregarDados() {
   const listaDiv = document.getElementById("lista");
 
-  // ⚠️ Simples: vamos pegar alguns códigos manualmente
-  const codigos = ["abc123", "xyz456"]; // depois melhoramos isso
+  // ⚠️ ainda manual (depois automatizamos)
+  const codigos = ["abc123", "xyz456"];
 
   let labels = [];
   let dados = [];
+  let totalClicks = 0;
 
   listaDiv.innerHTML = "";
 
@@ -16,17 +17,26 @@ async function carregarDados() {
 
       labels.push(codigo);
       dados.push(data.clicks);
+      totalClicks += data.clicks;
 
       listaDiv.innerHTML += `
         <div class="link-card">
-          <p><strong>${codigo}</strong></p>
-          <p>Cliques: ${data.clicks}</p>
+          <div>
+            <strong>${codigo}</strong><br>
+            <small>${data.url}</small>
+          </div>
+          <div>
+            ${data.clicks} cliques
+          </div>
         </div>
       `;
     } catch {
       console.log("Erro ao carregar", codigo);
     }
   }
+
+  document.getElementById("totalLinks").innerText = codigos.length;
+  document.getElementById("totalClicks").innerText = totalClicks;
 
   criarGrafico(labels, dados);
 }

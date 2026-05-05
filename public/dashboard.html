@@ -3,13 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard</title>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .cards {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .card {
+      flex: 1;
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .card h2 {
+      margin: 0;
+      color: #22c55e;
+    }
+
+    canvas {
+      margin-top: 30px;
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+    }
+  </style>
 </head>
+
 <body>
 
 <div class="container">
   <h1>📊 Dashboard</h1>
+
+  <div class="cards">
+    <div class="card">
+      <p>Total de Links</p>
+      <h2 id="totalLinks">0</h2>
+    </div>
+
+    <div class="card">
+      <p>Total de Cliques</p>
+      <h2 id="totalClicks">0</h2>
+    </div>
+  </div>
 
   <canvas id="grafico"></canvas>
 
@@ -18,5 +60,6 @@
 </div>
 
 <script src="dashboard.js"></script>
+
 </body>
 </html>

@@ -71,3 +71,13 @@ canvas {
 .link-card {
   margin-top: 10px;
 }
+
+.link-card {
+  background: #1e293b;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
